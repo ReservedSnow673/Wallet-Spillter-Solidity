@@ -1,7 +1,13 @@
+// SPDX-License-Identifier: Unlicensed
+// Developer - ReservedSnow(https://linktr.ee/reservedsnow)
 
 // imports required
 import '@openzeppelin/contracts/security/ReentrancyGuard.sol';
 import '@openzeppelin/contracts/access/Ownable.sol';
+
+pragma solidity >=0.8.17 <0.9.0;
+
+contract SnowSplit is Ownable, ReentrancyGuard {
 
 // wallet defined (will be able to change later using set functions incase of compromising of wallet or something)
 address PayeeWallet1 = 0x119a5a09526Ff53E26fF641D64D0d993CFf107c1; // replace with the actual wallet address
@@ -63,4 +69,6 @@ address PayeeWallet6 = 0x119a5a09526Ff53E26fF641D64D0d993CFf107c1; // replace wi
         payable(PayeeWallet6).transfer(_balance * 15 / 100); // 15/ 100 means 15% of the current contract balance
          (bool os, ) = payable(owner()).call{value: address(this).balance}(""); // sends any remaining % left to the owner 
         require(os);
+  }
+  
   }
