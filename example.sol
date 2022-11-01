@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: Unlicensed
 // Developer - ReservedSnow(https://linktr.ee/reservedsnow)
+// Dev takes NO liability
 
 // imports required
 import '@openzeppelin/contracts/security/ReentrancyGuard.sol';
